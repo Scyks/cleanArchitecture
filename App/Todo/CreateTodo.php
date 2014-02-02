@@ -104,11 +104,15 @@ class CreateTodo implements Interactor {
 			->setName($this->getRequest()->name)
 			->setDone($this->getRequest()->done)
 			->setPriority($this->getRequest()->priority)
-			->setStartDate($this->getRequest()->startDate)
-			->setEndDate($this->getRequest()->endDate)
-
-			->save()
 		;
+
+		if (!is_null($this->getRequest()->startDate))
+			$oTodo->setStartDate($this->getRequest()->startDate);
+
+		if (!is_null($this->getRequest()->endDate))
+			$oTodo->setEndDate($this->getRequest()->endDate);
+
+		$oTodo->save();
 
 		$oResponse = new TodoResponse();
 

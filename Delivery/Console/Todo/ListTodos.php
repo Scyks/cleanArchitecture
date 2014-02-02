@@ -166,7 +166,7 @@ class ListTodos {
 						$oTodo->getId(),
 						$oTodo->getName(),
 						$oTodo->getPriority(),
-						((true == $oTodo->getDone()) ? 'Yes' : 'No'),
+						((true == $oTodo->isDone()) ? 'Yes' : 'No'),
 						(($oTodo->getStartDate() instanceof \DateTime) ? $oTodo->getStartDate()->format('Y-m-d') : '-'),
 						(($oTodo->getEndDate() instanceof \DateTime) ? $oTodo->getEndDate()->format('Y-m-d') : '-'),
 					));

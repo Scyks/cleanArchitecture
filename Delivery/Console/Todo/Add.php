@@ -123,7 +123,7 @@ class Add {
 			$iPriority = \cli\prompt("Todo's Priority (1-10)", 1);
 		}
 
-		$this->getRequest()->priority = $iPriority;
+		$this->getRequest()->priority = (int) $iPriority;
 
 		return $this;
 	}
