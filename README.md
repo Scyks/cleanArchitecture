@@ -3,12 +3,16 @@
 inspired by [Robert C. Martin's (Uncle Bob)][1] Talks about clean architecture.
 http://vimeo.com/68215570
 
-I also get inspired by a blog post of [Benjamin Eberlei][2]. 
+I also get inspired by a blog post of [Benjamin Eberlei][2].
 http://www.whitewashing.de/2012/08/13/oop_business_applications_entity_boundary_interactor.html)
 
-When you look at the file structure, you should know what this application is about. If you don't please send me an email and tell why not. Maybe i can do it a better way.
+When you look at the file structure, you should know what this
+application is about. If you don't please send me an email and
+tell why not. Maybe i can do it a better way.
 
-In this application i also tried to use to follow the rules of Robert C. Martin's Book "Clean Code". In my opinion he is totally right.
+In this application i also tried to use to follow the rules of
+Robert C. Martin's Book "Clean Code". In my opinion he is totally
+right.
 
 #Short Explanation of this Architecture
 
