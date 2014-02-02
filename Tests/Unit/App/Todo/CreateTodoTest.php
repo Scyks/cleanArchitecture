@@ -105,7 +105,7 @@ class CreateTodoTest extends TestCase {
 		return [
 			['name', 'getName'],
 			['priority', 'getPriority'],
-			['done', 'getDone'],
+			['done', 'isDone'],
 			['startDate', 'getStartDate'],
 			['endDate', 'getEndDate'],
 		];

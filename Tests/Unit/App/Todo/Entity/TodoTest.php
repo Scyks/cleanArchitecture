@@ -59,7 +59,7 @@ class TodoTest extends PropertyTestCase {
 		return [
 			['id', self::T_INT, null],
 			['name', self::T_STRING, null],
-			['done', self::T_BOOL, null],
+			['done', self::T_BOOL, null, ['isDone', 'setDone']],
 			['priority', self::T_INT, null],
 			['startDate', '\DateTime', null],
 			['endDate', '\DateTime', null],

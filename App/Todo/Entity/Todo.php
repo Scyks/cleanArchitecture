@@ -94,7 +94,7 @@ class Todo {
 	/**
 	 * @return boolean
 	 */
-	public function getDone() {
+	public function isDone() {
 
 		return $this->done;
 	}
