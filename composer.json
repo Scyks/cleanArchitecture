@@ -1,0 +1,19 @@
+{
+	"name": "Architecture Test",
+	"description": "Test of Clean Architecture",
+	"config":{
+		"bin-dir":"bin/"
+	},
+	"require": {
+		"php": ">=5.4.0",
+		"wp-cli/php-cli-tools": "dev-master"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"App": "",
+			"Delivery": "",
+			"Tests": ""
+		}
+	}
+}
