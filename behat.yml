@@ -1,0 +1,7 @@
+# behat.yml
+default:
+    context:
+        class:      Tests\Functional\Bootstrap\FeatureContext
+    paths:
+        features: Tests/Functional
+        bootstrap: %behat.paths.features%/Bootstrap

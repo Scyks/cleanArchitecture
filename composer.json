@@ -6,7 +6,8 @@
 	},
 	"require": {
 		"php": ">=5.4.0",
-		"wp-cli/php-cli-tools": "dev-master"
+		"wp-cli/php-cli-tools": "dev-master",
+		"behat/behat": "2.4.*@stable"
 	},
 
 	"autoload": {
