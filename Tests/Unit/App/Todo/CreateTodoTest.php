@@ -111,6 +111,14 @@ class CreateTodoTest extends TestCase {
 		];
 	}
 
+	public function dataProviderWithoutDatesCompareValuesFromRequestToEntity() {
+		return [
+			['name', 'getName'],
+			['priority', 'getPriority'],
+			['done', 'isDone'],
+		];
+	}
+
 #pragma mark - processRequest
 
 	/**
@@ -150,9 +158,27 @@ class CreateTodoTest extends TestCase {
 
 	/**
 	 * @test
+	 * @dataProvider dataProviderWithoutDatesCompareValuesFromRequestToEntity
+	 */
+	public function processRequest_missingStartAndEndDate_entityContainsValueFromRequest($sRequestProperty, $sEntityGetter) {
+		$oCreateTodo = $this->createClass();
+		$oRequest  = $oCreateTodo->getRequest();
+		$oRequest->startDate = null;
+		$oRequest->endDate = null;
+
+		$oCreateTodo->setRequest($oRequest);
+
+		$oTodo = $oCreateTodo->processRequest()->getTodo();
+
+		$this->assertEquals($oRequest->{$sRequestProperty}, $oTodo->{$sEntityGetter}());
+
+	}
+
+	/**
+	 * @test
 	 * @dataProvider dataProviderCompareValuesFromRequestToEntity
 	 */
-	public function processRequest_entityContainsValueFromRequest($sRequestProperty, $sEntityGetter) {
+	public function processRequest_completeRequest_entityContainsValueFromRequest($sRequestProperty, $sEntityGetter) {
 		$oCreateTodo = $this->createClass();
 		$oRequest  =$oCreateTodo->getRequest();
 		$oTodo = $oCreateTodo->processRequest()->getTodo();
