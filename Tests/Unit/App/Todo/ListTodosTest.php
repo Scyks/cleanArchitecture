@@ -41,6 +41,7 @@ use App\Common\Interactor\Interactor;
 use App\Todo\ListTodos;
 use App\Todo\EntityFactory;
 use App\Todo\Entity\Todo as TodoEntity;
+use App\Todo\Request\Filter;
 use Tests\Unit\TestCase;
 use Tests\Unit\App\InteractorTests;
 
@@ -74,18 +75,15 @@ class ListTodosTest extends TestCase {
 	/**
 	 * @param bool $bValidRequest
 	 *
-	 * @return CreateTodoRequest
+	 * @return Filter
 	 */
 	protected function createRequest($bValidRequest = true) {
-		$oRequest = $this->getMock('\App\Todo\Request\Filter', array('isValid'));
 
-		$oRequest
-			->expects($this->any())
-			->method('isValid')
-			->will($this->returnValue($bValidRequest))
-		;
-
-		return $oRequest;
+		if (true == $bValidRequest) {
+			return new Filter();
+		} else {
+			return new Mock\InvalidFilterRequestMock();
+		}
 
 	}
 
